@@ -13,13 +13,13 @@
 
 // TODO: Adjust the struct as described above.
 struct ReportCard<T> {
-    grade: T,
+    grade: f32,
     student_name: String,
     student_age: u8,
 }
 
 // TODO: Adjust the impl block as described above.
-impl<T: std::fmt::Display> ReportCard<T> {
+impl ReportCard {
     fn print(&self) -> String {
         format!(
             "{} ({}) - achieved a grade of {}",

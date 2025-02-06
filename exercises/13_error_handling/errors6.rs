@@ -47,7 +47,7 @@ impl PositiveNonzeroInteger {
         // TODO: change this to return an appropriate error instead of panicking
         // when `parse()` returns an error.
         let res = match s.parse() {
-            Err(E) => ParseIntError,
+            Err(E) => Err(ParsePosNonzeroError::from_parse_int(E)),
             Ok(x) => Self::new(x).map_err(ParsePosNonzeroError::from_creation),
         };
 
